@@ -1,0 +1,35 @@
+#!/usr/bin/python3
+"""Alta3 || Tracking ISS"""
+
+import urllib.request
+import json
+
+## Define URL
+MAJORTOM = 'http://api.open-notify.org/astros.json'
+
+def main():
+        
+    ## Call the webservice
+    groundctrl = urllib.request.urlopen(MAJORTOM)
+    
+    ## put fileobject into helmet
+    helmet = groundctrl.read()
+    
+    ## decode JSON to Python data structure
+    helmetson = json.loads(helmet.decode('utf-8'))
+    
+    ## display our Pythonic data
+    #print("\n\nConverted Python data")
+    # print(helmetson)
+    
+    print('\n\nPeople in Space: ', helmetson['number'])
+    people = helmetson['people']
+    # print(people)
+    for astro in people:
+        # {'craft': 'ISS', 'name': 'Mark Vande Hei'}
+        # <name> is on the <craft>
+        txt = f"{astro['name']} is on the {astro['craft']}"
+        print(txt)
+
+main()
+
