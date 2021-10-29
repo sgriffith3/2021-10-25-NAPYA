@@ -1,0 +1,19 @@
+- name: Learning to debug
+  hosts: planetexpress
+
+  vars_prompt:
+  - name: uptm 
+    private: no
+  tasks:
+          #  - name: Get uptime information
+          #    ansible.builtin.shell: /usr/bin/uptime
+          #    register: uptm
+  
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: uptm
+      # verbosity: 2
+
+      #  - name: Debug with a msg
+      #    debug:
+      #      msg: "This machine has been up for {{ uptm.stdout }}"

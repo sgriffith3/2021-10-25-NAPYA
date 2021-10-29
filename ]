@@ -1,0 +1,5 @@
+Hello, my name is {{ ansible_user.upper() }}.
+
+{% if ansible_user == bender %}
+I am not fry. I am a robot
+{% endif %}

@@ -1,0 +1,21 @@
+- name: learning lists
+  hosts: localhost
+  tasks:
+  - debug:
+      msg:
+      - Sam
+      - Steve
+      - Becky
+      - Bob
+
+  - debug:
+      var: item
+      #loop:
+    with_items:
+    - "{{ ansible_os_family }}"
+    - "{{ names }}"
+    vars:
+      names:
+      - Sam
+      - Steve
+      - Becky

@@ -1,0 +1,13 @@
+- name: Talking about filters
+  hosts: localhost
+  connection: local
+  vars:
+    dog: Kujo
+  tasks:
+  - debug:
+      msg:
+      - "This is a dog name: {{ dog }}"
+      - "This is a python formatted dog name: {{ dog.lower() }}"
+      - "This is a jinja2 formatted dog name: {{ dog | lower }}"
+      - "Rounded 42.55 : {{ 42.55 | round | int }}" 
+

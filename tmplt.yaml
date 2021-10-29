@@ -1,0 +1,10 @@
+- name: Using the template module
+  hosts: planetexpress
+  tasks:
+  - copy:
+      src: example.txt
+      dest: example.txt
+
+  - template:
+      src: myexample.txt
+      dest: temp_example.txt

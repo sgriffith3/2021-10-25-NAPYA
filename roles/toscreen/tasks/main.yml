@@ -1,0 +1,8 @@
+---
+- name: debug ansible_host
+  debug:
+    var: ansible_host
+
+- name: debug ansible_os_family
+  debug:
+    var: ansible_os_family

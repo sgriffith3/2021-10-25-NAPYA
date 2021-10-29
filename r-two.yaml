@@ -1,0 +1,9 @@
+- name: Using our first role again
+  hosts: planetexpress
+
+  tasks:
+  - debug:
+      msg: Do this first!
+
+  - import_role:
+      name: toscreen

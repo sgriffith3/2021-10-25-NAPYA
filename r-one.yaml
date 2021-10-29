@@ -1,0 +1,8 @@
+- name: Using our first role
+  hosts: planetexpress
+  tasks:
+  - debug:
+      msg: Try to do this first
+
+  roles:
+  - name: toscreen

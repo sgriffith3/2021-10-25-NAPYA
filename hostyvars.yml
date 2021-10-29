@@ -1,0 +1,7 @@
+- name: learning host vars
+  hosts: planetexpress
+  tasks:
+  - debug:
+      msg: winner
+    when: rps == "scissors"
+

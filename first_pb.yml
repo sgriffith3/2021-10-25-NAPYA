@@ -1,0 +1,10 @@
+# Play = hosts + tasks
+#
+# Playbook = 1+ Plays
+---
+- name: Sam's first playbook
+  hosts: localhost
+  tasks:
+  - name: Ping my localhost machine
+    ping:
+

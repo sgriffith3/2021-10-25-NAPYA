@@ -1,0 +1,26 @@
+- name: Learning Blocks and Rescues
+  hosts: fry,bender 
+  tasks:
+  - name: debug something
+    debug:
+      var: ansible_all_ipv4_addresses[0]
+
+  - name: my first block
+    when: ansible_user == "bender"
+    block:
+    - debug:
+        var: ansible_user
+
+    - fail:
+        msg: "Bender is a loser"
+
+    - debug:
+        var: ansible_host
+
+    rescue:
+    - debug:
+        msg: "Here is your lifesaver - and CPR"
+
+  - debug:
+      var: ansible_os_family
+

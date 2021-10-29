@@ -1,0 +1,21 @@
+- name: Where are the vars from?
+  hosts: planetexpress
+
+  vars_prompt:
+  - name: work_dir
+
+  vars:
+    work_dir: "myfolder"
+
+  tasks:
+  - name: get the work_dir
+    shell: cat theworkingdir
+    register: found_dir
+
+  - set_fact:
+      work_dir: found_dir.stdout
+
+  - name: Make the work_dir
+    shell: mkdir {{ work_dir }}
+    vars:
+      work_dir: samsdir
